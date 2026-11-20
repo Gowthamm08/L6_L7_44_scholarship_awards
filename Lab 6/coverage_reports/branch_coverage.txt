@@ -1,0 +1,17 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-8.3.4, pluggy-1.5.0
+rootdir: C:\Users\GOWTHAM B\Downloads\L6_L7_44_scholarship_awards\Lab 6
+plugins: anyio-4.16.0, cov-7.1.0
+collected 14 items
+
+BranchCoverageTest_PES1UG24CS172_application.py ..............           [100%]
+
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.11.9-final-0 _______________
+
+Name                    Stmts   Miss Branch BrPart  Cover   Missing
+-------------------------------------------------------------------
+scholarship_awards.py      37      0     26      0   100%
+-------------------------------------------------------------------
+TOTAL                      37      0     26      0   100%
+============================= 14 passed in 0.31s ==============================
