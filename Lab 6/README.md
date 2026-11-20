@@ -63,7 +63,7 @@ Full terminal output is saved in `coverage_reports/code_coverage.txt` and `cover
 
 ## Evidence screenshots
 
-The `screenshots/` directory contains terminal captures for code coverage execution and report, branch coverage execution and report, and final successful test results.
+The `screenshots/` directory contains `README.md` with capture instructions and the five required filenames. PNG screenshots still need to be captured manually because this environment does not allow automated control of Windows Terminal. Genuine command output is preserved in `coverage_reports/`.
 
 ## Conclusion
 
