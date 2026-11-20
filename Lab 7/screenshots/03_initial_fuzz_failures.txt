@@ -1,0 +1,372 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-8.3.4, pluggy-1.5.0 -- C:\Users\GOWTHAM B\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default'
+rootdir: C:\Users\GOWTHAM B\Downloads\L6_L7_44_scholarship_awards\Lab 7
+plugins: anyio-4.16.0, hypothesis-6.170.17, cov-7.1.0
+collecting ... collected 46 items
+
+test_processor.py::test_parse_applicant_valid_records PASSED             [  2%]
+test_processor.py::test_parse_applicant_decimal_whitespace_and_unicode[merit:82.5-expected0] PASSED [  4%]
+test_processor.py::test_parse_applicant_decimal_whitespace_and_unicode[  arts : 65  -expected1] PASSED [  6%]
+test_processor.py::test_parse_applicant_decimal_whitespace_and_unicode[m\xe9rit:82-expected2] PASSED [  8%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[] PASSED [ 10%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[:82] FAILED [ 13%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[merit:] PASSED [ 15%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[merit] PASSED [ 17%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[merit:82:extra] PASSED [ 19%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[merit:abc] PASSED [ 21%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[merit:NaN] FAILED [ 23%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[merit:inf] FAILED [ 26%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[   :82] FAILED [ 28%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[merit:-1] FAILED [ 30%]
+test_processor.py::test_parse_applicant_arbitrary_inputs_are_valid_or_raise_value_error FAILED [ 32%]
+test_processor.py::test_marks_average_valid_lists_have_floor_average PASSED [ 34%]
+test_processor.py::test_marks_average_large_and_unicode_integers PASSED  [ 36%]
+test_processor.py::test_marks_average_rejects_malformed_csv[] PASSED     [ 39%]
+test_processor.py::test_marks_average_rejects_malformed_csv[,] PASSED    [ 41%]
+test_processor.py::test_marks_average_rejects_malformed_csv[1,] PASSED   [ 43%]
+test_processor.py::test_marks_average_rejects_malformed_csv[,1] PASSED   [ 45%]
+test_processor.py::test_marks_average_rejects_malformed_csv[1,,2] PASSED [ 47%]
+test_processor.py::test_marks_average_rejects_malformed_csv[one,2] PASSED [ 50%]
+test_processor.py::test_marks_average_rejects_malformed_csv[1.5,2] PASSED [ 52%]
+test_processor.py::test_marks_average_rejects_malformed_csv[-1,2] FAILED [ 54%]
+test_processor.py::test_marks_average_rejects_malformed_csv[  ,  ] PASSED [ 56%]
+test_processor.py::test_marks_average_arbitrary_inputs_are_valid_or_raise_value_error FAILED [ 58%]
+test_processor.py::test_payable_award_valid_values_preserve_eighteen_percent_rule PASSED [ 60%]
+test_processor.py::test_payable_award_accepts_decimal_and_large_finite_values PASSED [ 63%]
+test_processor.py::test_payable_award_rejects_malformed_values[] PASSED  [ 65%]
+test_processor.py::test_payable_award_rejects_malformed_values[500] PASSED [ 67%]
+test_processor.py::test_payable_award_rejects_malformed_values[500|1|2] PASSED [ 69%]
+test_processor.py::test_payable_award_rejects_malformed_values[x|1] PASSED [ 71%]
+test_processor.py::test_payable_award_rejects_malformed_values[1|x] PASSED [ 73%]
+test_processor.py::test_payable_award_rejects_malformed_values[NaN|0] FAILED [ 76%]
+test_processor.py::test_payable_award_rejects_malformed_values[inf|0] FAILED [ 78%]
+test_processor.py::test_payable_award_rejects_malformed_values[-1|0] FAILED [ 80%]
+test_processor.py::test_payable_award_rejects_malformed_values[1|-1] FAILED [ 82%]
+test_processor.py::test_payable_award_rejects_malformed_values[1e308|0] FAILED [ 84%]
+test_processor.py::test_payable_award_arbitrary_inputs_are_valid_or_raise_value_error FAILED [ 86%]
+test_processor.py::test_all_functions_reject_unexpected_types[None] FAILED [ 89%]
+test_processor.py::test_all_functions_reject_unexpected_types[10] FAILED [ 91%]
+test_processor.py::test_all_functions_reject_unexpected_types[2.5] FAILED [ 93%]
+test_processor.py::test_all_functions_reject_unexpected_types[value3] FAILED [ 95%]
+test_processor.py::test_all_functions_reject_unexpected_types[value4] FAILED [ 97%]
+test_processor.py::test_all_functions_reject_unexpected_types[True] FAILED [100%]
+
+================================== FAILURES ===================================
+_____________ test_parse_applicant_rejects_malformed_records[:82] _____________
+
+text = ':82'
+
+    @pytest.mark.parametrize("text", ["", ":82", "merit:", "merit", "merit:82:extra", "merit:abc", "merit:NaN", "merit:inf", "   :82", "merit:-1"])
+    def test_parse_applicant_rejects_malformed_records(text):
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+test_processor.py:20: Failed
+__________ test_parse_applicant_rejects_malformed_records[merit:NaN] __________
+
+text = 'merit:NaN'
+
+    @pytest.mark.parametrize("text", ["", ":82", "merit:", "merit", "merit:82:extra", "merit:abc", "merit:NaN", "merit:inf", "   :82", "merit:-1"])
+    def test_parse_applicant_rejects_malformed_records(text):
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+test_processor.py:20: Failed
+__________ test_parse_applicant_rejects_malformed_records[merit:inf] __________
+
+text = 'merit:inf'
+
+    @pytest.mark.parametrize("text", ["", ":82", "merit:", "merit", "merit:82:extra", "merit:abc", "merit:NaN", "merit:inf", "   :82", "merit:-1"])
+    def test_parse_applicant_rejects_malformed_records(text):
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+test_processor.py:20: Failed
+___________ test_parse_applicant_rejects_malformed_records[   :82] ____________
+
+text = '   :82'
+
+    @pytest.mark.parametrize("text", ["", ":82", "merit:", "merit", "merit:82:extra", "merit:abc", "merit:NaN", "merit:inf", "   :82", "merit:-1"])
+    def test_parse_applicant_rejects_malformed_records(text):
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+test_processor.py:20: Failed
+__________ test_parse_applicant_rejects_malformed_records[merit:-1] ___________
+
+text = 'merit:-1'
+
+    @pytest.mark.parametrize("text", ["", ":82", "merit:", "merit", "merit:82:extra", "merit:abc", "merit:NaN", "merit:inf", "   :82", "merit:-1"])
+    def test_parse_applicant_rejects_malformed_records(text):
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+test_processor.py:20: Failed
+____ test_parse_applicant_arbitrary_inputs_are_valid_or_raise_value_error _____
+
+    @given(ARBITRARY_INPUT)
+>   @settings(max_examples=300)
+
+test_processor.py:24: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_processor.py:27: in test_parse_applicant_arbitrary_inputs_are_valid_or_raise_value_error
+    result = parse_applicant(value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = None
+
+    def parse_applicant(text):
+>       category, marks = text.split(':')
+E       AttributeError: 'NoneType' object has no attribute 'split'
+E       Failing test case: test_parse_applicant_arbitrary_inputs_are_valid_or_raise_value_error(
+E           value=None,
+E       )
+
+processor.py:2: AttributeError
+_______________ test_marks_average_rejects_malformed_csv[-1,2] ________________
+
+text = '-1,2'
+
+    @pytest.mark.parametrize("text", ["", ",", "1,", ",1", "1,,2", "one,2", "1.5,2", "-1,2", "  ,  "])
+    def test_marks_average_rejects_malformed_csv(text):
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+test_processor.py:50: Failed
+_____ test_marks_average_arbitrary_inputs_are_valid_or_raise_value_error ______
+
+    @given(ARBITRARY_INPUT)
+>   @settings(max_examples=300)
+
+test_processor.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_processor.py:57: in test_marks_average_arbitrary_inputs_are_valid_or_raise_value_error
+    result = marks_average(value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+marks_csv = None
+
+    def marks_average(marks_csv):
+>       values = [int(r) for r in marks_csv.split(',')]
+E       AttributeError: 'NoneType' object has no attribute 'split'
+E       Failing test case: test_marks_average_arbitrary_inputs_are_valid_or_raise_value_error(
+E           value=None,
+E       )
+
+processor.py:6: AttributeError
+_____________ test_payable_award_rejects_malformed_values[NaN|0] ______________
+
+text = 'NaN|0'
+
+    @pytest.mark.parametrize("text", ["", "500", "500|1|2", "x|1", "1|x", "NaN|0", "inf|0", "-1|0", "1|-1", "1e308|0"])
+    def test_payable_award_rejects_malformed_values(text):
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+test_processor.py:80: Failed
+_____________ test_payable_award_rejects_malformed_values[inf|0] ______________
+
+text = 'inf|0'
+
+    @pytest.mark.parametrize("text", ["", "500", "500|1|2", "x|1", "1|x", "NaN|0", "inf|0", "-1|0", "1|-1", "1e308|0"])
+    def test_payable_award_rejects_malformed_values(text):
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+test_processor.py:80: Failed
+______________ test_payable_award_rejects_malformed_values[-1|0] ______________
+
+text = '-1|0'
+
+    @pytest.mark.parametrize("text", ["", "500", "500|1|2", "x|1", "1|x", "NaN|0", "inf|0", "-1|0", "1|-1", "1e308|0"])
+    def test_payable_award_rejects_malformed_values(text):
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+test_processor.py:80: Failed
+______________ test_payable_award_rejects_malformed_values[1|-1] ______________
+
+text = '1|-1'
+
+    @pytest.mark.parametrize("text", ["", "500", "500|1|2", "x|1", "1|x", "NaN|0", "inf|0", "-1|0", "1|-1", "1e308|0"])
+    def test_payable_award_rejects_malformed_values(text):
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+test_processor.py:80: Failed
+____________ test_payable_award_rejects_malformed_values[1e308|0] _____________
+
+text = '1e308|0'
+
+    @pytest.mark.parametrize("text", ["", "500", "500|1|2", "x|1", "1|x", "NaN|0", "inf|0", "-1|0", "1|-1", "1e308|0"])
+    def test_payable_award_rejects_malformed_values(text):
+>       with pytest.raises(ValueError):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+test_processor.py:80: Failed
+_____ test_payable_award_arbitrary_inputs_are_valid_or_raise_value_error ______
+
+    @given(ARBITRARY_INPUT)
+>   @settings(max_examples=300)
+
+test_processor.py:84: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+test_processor.py:87: in test_payable_award_arbitrary_inputs_are_valid_or_raise_value_error
+    result = payable_award(value)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = None
+
+    def payable_award(text):
+>       award, deduction = text.split('|')
+E       AttributeError: 'NoneType' object has no attribute 'split'
+E       Failing test case: test_payable_award_arbitrary_inputs_are_valid_or_raise_value_error(
+E           value=None,
+E       )
+
+processor.py:10: AttributeError
+______________ test_all_functions_reject_unexpected_types[None] _______________
+
+value = None
+
+    @pytest.mark.parametrize("value", [None, 10, 2.5, [], {}, True])
+    def test_all_functions_reject_unexpected_types(value):
+        for function in (parse_applicant, marks_average, payable_award):
+            with pytest.raises(ValueError):
+>               function(value)
+
+test_processor.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = None
+
+    def parse_applicant(text):
+>       category, marks = text.split(':')
+E       AttributeError: 'NoneType' object has no attribute 'split'
+
+processor.py:2: AttributeError
+_______________ test_all_functions_reject_unexpected_types[10] ________________
+
+value = 10
+
+    @pytest.mark.parametrize("value", [None, 10, 2.5, [], {}, True])
+    def test_all_functions_reject_unexpected_types(value):
+        for function in (parse_applicant, marks_average, payable_award):
+            with pytest.raises(ValueError):
+>               function(value)
+
+test_processor.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 10
+
+    def parse_applicant(text):
+>       category, marks = text.split(':')
+E       AttributeError: 'int' object has no attribute 'split'
+
+processor.py:2: AttributeError
+_______________ test_all_functions_reject_unexpected_types[2.5] _______________
+
+value = 2.5
+
+    @pytest.mark.parametrize("value", [None, 10, 2.5, [], {}, True])
+    def test_all_functions_reject_unexpected_types(value):
+        for function in (parse_applicant, marks_average, payable_award):
+            with pytest.raises(ValueError):
+>               function(value)
+
+test_processor.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = 2.5
+
+    def parse_applicant(text):
+>       category, marks = text.split(':')
+E       AttributeError: 'float' object has no attribute 'split'
+
+processor.py:2: AttributeError
+_____________ test_all_functions_reject_unexpected_types[value3] ______________
+
+value = []
+
+    @pytest.mark.parametrize("value", [None, 10, 2.5, [], {}, True])
+    def test_all_functions_reject_unexpected_types(value):
+        for function in (parse_applicant, marks_average, payable_award):
+            with pytest.raises(ValueError):
+>               function(value)
+
+test_processor.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = []
+
+    def parse_applicant(text):
+>       category, marks = text.split(':')
+E       AttributeError: 'list' object has no attribute 'split'
+
+processor.py:2: AttributeError
+_____________ test_all_functions_reject_unexpected_types[value4] ______________
+
+value = {}
+
+    @pytest.mark.parametrize("value", [None, 10, 2.5, [], {}, True])
+    def test_all_functions_reject_unexpected_types(value):
+        for function in (parse_applicant, marks_average, payable_award):
+            with pytest.raises(ValueError):
+>               function(value)
+
+test_processor.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = {}
+
+    def parse_applicant(text):
+>       category, marks = text.split(':')
+E       AttributeError: 'dict' object has no attribute 'split'
+
+processor.py:2: AttributeError
+______________ test_all_functions_reject_unexpected_types[True] _______________
+
+value = True
+
+    @pytest.mark.parametrize("value", [None, 10, 2.5, [], {}, True])
+    def test_all_functions_reject_unexpected_types(value):
+        for function in (parse_applicant, marks_average, payable_award):
+            with pytest.raises(ValueError):
+>               function(value)
+
+test_processor.py:105: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+text = True
+
+    def parse_applicant(text):
+>       category, marks = text.split(':')
+E       AttributeError: 'bool' object has no attribute 'split'
+
+processor.py:2: AttributeError
+=========================== short test summary info ===========================
+FAILED test_processor.py::test_parse_applicant_rejects_malformed_records[:82]
+FAILED test_processor.py::test_parse_applicant_rejects_malformed_records[merit:NaN]
+FAILED test_processor.py::test_parse_applicant_rejects_malformed_records[merit:inf]
+FAILED test_processor.py::test_parse_applicant_rejects_malformed_records[   :82]
+FAILED test_processor.py::test_parse_applicant_rejects_malformed_records[merit:-1]
+FAILED test_processor.py::test_parse_applicant_arbitrary_inputs_are_valid_or_raise_value_error
+FAILED test_processor.py::test_marks_average_rejects_malformed_csv[-1,2] - Fa...
+FAILED test_processor.py::test_marks_average_arbitrary_inputs_are_valid_or_raise_value_error
+FAILED test_processor.py::test_payable_award_rejects_malformed_values[NaN|0]
+FAILED test_processor.py::test_payable_award_rejects_malformed_values[inf|0]
+FAILED test_processor.py::test_payable_award_rejects_malformed_values[-1|0]
+FAILED test_processor.py::test_payable_award_rejects_malformed_values[1|-1]
+FAILED test_processor.py::test_payable_award_rejects_malformed_values[1e308|0]
+FAILED test_processor.py::test_payable_award_arbitrary_inputs_are_valid_or_raise_value_error
+FAILED test_processor.py::test_all_functions_reject_unexpected_types[None] - ...
+FAILED test_processor.py::test_all_functions_reject_unexpected_types[10] - At...
+FAILED test_processor.py::test_all_functions_reject_unexpected_types[2.5] - A...
+FAILED test_processor.py::test_all_functions_reject_unexpected_types[value3]
+FAILED test_processor.py::test_all_functions_reject_unexpected_types[value4]
+FAILED test_processor.py::test_all_functions_reject_unexpected_types[True] - ...
+======================== 20 failed, 26 passed in 2.78s ========================
+pytest_exit_code=1

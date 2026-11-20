@@ -1,0 +1,10 @@
+Name: hypothesis
+Version: 6.170.17
+Summary: The property-based testing library for Python
+Home-page: https://hypothesis.works
+Author: 
+Author-email: "David R. MacIver and Zac Hatfield-Dodds" <david@drmaciver.com>
+License-Expression: MPL-2.0
+Location: C:\Users\GOWTHAM B\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages
+Requires: sortedcontainers
+Required-by: 

@@ -1,0 +1,68 @@
+============================= test session starts =============================
+platform win32 -- Python 3.11.9, pytest-8.3.4, pluggy-1.5.0 -- C:\Users\GOWTHAM B\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe
+cachedir: .pytest_cache
+hypothesis profile 'default'
+rootdir: C:\Users\GOWTHAM B\Downloads\L6_L7_44_scholarship_awards\Lab 7
+plugins: anyio-4.16.0, hypothesis-6.170.17, cov-7.1.0
+collecting ... collected 50 items
+
+test_processor.py::test_parse_applicant_valid_records PASSED             [  2%]
+test_processor.py::test_parse_applicant_decimal_whitespace_and_unicode[merit:82.5-expected0] PASSED [  4%]
+test_processor.py::test_parse_applicant_decimal_whitespace_and_unicode[  arts : 65  -expected1] PASSED [  6%]
+test_processor.py::test_parse_applicant_decimal_whitespace_and_unicode[m\xe9rit:82-expected2] PASSED [  8%]
+test_processor.py::test_parse_applicant_very_long_category PASSED        [ 10%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[] PASSED [ 12%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[:82] PASSED [ 14%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[merit:] PASSED [ 16%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[merit] PASSED [ 18%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[merit:82:extra] PASSED [ 20%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[merit:abc] PASSED [ 22%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[merit:NaN] PASSED [ 24%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[merit:inf] PASSED [ 26%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[   :82] PASSED [ 28%]
+test_processor.py::test_parse_applicant_rejects_malformed_records[merit:-1] PASSED [ 30%]
+test_processor.py::test_parse_applicant_arbitrary_inputs_are_valid_or_raise_value_error PASSED [ 32%]
+test_processor.py::test_marks_average_valid_lists_have_floor_average PASSED [ 34%]
+test_processor.py::test_marks_average_large_and_unicode_integers PASSED  [ 36%]
+test_processor.py::test_marks_average_rejects_malformed_csv[] PASSED     [ 38%]
+test_processor.py::test_marks_average_rejects_malformed_csv[,] PASSED    [ 40%]
+test_processor.py::test_marks_average_rejects_malformed_csv[1,] PASSED   [ 42%]
+test_processor.py::test_marks_average_rejects_malformed_csv[,1] PASSED   [ 44%]
+test_processor.py::test_marks_average_rejects_malformed_csv[1,,2] PASSED [ 46%]
+test_processor.py::test_marks_average_rejects_malformed_csv[one,2] PASSED [ 48%]
+test_processor.py::test_marks_average_rejects_malformed_csv[1.5,2] PASSED [ 50%]
+test_processor.py::test_marks_average_rejects_malformed_csv[-1,2] PASSED [ 52%]
+test_processor.py::test_marks_average_rejects_malformed_csv[  ,  ] PASSED [ 54%]
+test_processor.py::test_marks_average_arbitrary_inputs_are_valid_or_raise_value_error PASSED [ 56%]
+test_processor.py::test_payable_award_valid_values_preserve_eighteen_percent_rule PASSED [ 58%]
+test_processor.py::test_payable_award_accepts_decimal_and_large_finite_values PASSED [ 60%]
+test_processor.py::test_payable_award_rejects_malformed_values[] PASSED  [ 62%]
+test_processor.py::test_payable_award_rejects_malformed_values[500] PASSED [ 64%]
+test_processor.py::test_payable_award_rejects_malformed_values[|1] PASSED [ 66%]
+test_processor.py::test_payable_award_rejects_malformed_values[1|] PASSED [ 68%]
+test_processor.py::test_payable_award_rejects_malformed_values[500|1|2] PASSED [ 70%]
+test_processor.py::test_payable_award_rejects_malformed_values[x|1] PASSED [ 72%]
+test_processor.py::test_payable_award_rejects_malformed_values[1|x] PASSED [ 74%]
+test_processor.py::test_payable_award_rejects_malformed_values[NaN|0] PASSED [ 76%]
+test_processor.py::test_payable_award_rejects_malformed_values[inf|0] PASSED [ 78%]
+test_processor.py::test_payable_award_rejects_malformed_values[-1|0] PASSED [ 80%]
+test_processor.py::test_payable_award_rejects_malformed_values[1|-1] PASSED [ 82%]
+test_processor.py::test_payable_award_rejects_malformed_values[1.7e308|0] PASSED [ 84%]
+test_processor.py::test_payable_award_arbitrary_inputs_are_valid_or_raise_value_error PASSED [ 86%]
+test_processor.py::test_all_functions_reject_unexpected_types[None] PASSED [ 88%]
+test_processor.py::test_all_functions_reject_unexpected_types[10] PASSED [ 90%]
+test_processor.py::test_all_functions_reject_unexpected_types[2.5] PASSED [ 92%]
+test_processor.py::test_all_functions_reject_unexpected_types[value3] PASSED [ 94%]
+test_processor.py::test_all_functions_reject_unexpected_types[value4] PASSED [ 96%]
+test_processor.py::test_all_functions_reject_unexpected_types[True] PASSED [ 98%]
+test_processor.py::test_main_reports_invalid_input_and_continues PASSED  [100%]
+
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.11.9-final-0 _______________
+
+Name           Stmts   Miss  Cover   Missing
+--------------------------------------------
+processor.py      74      1    99%   117
+--------------------------------------------
+TOTAL             74      1    99%
+============================= 50 passed in 2.32s ==============================
